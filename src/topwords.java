@@ -16,30 +16,45 @@ public class topwords {
         //-----------------------------------------------------------------------------------------------   args[0]   args[1]    args[2]
 
         //calls to the three methods below, passing the args[0-2] parameters from the user
+        int minlength = Integer.parseInt(args[1]);
 
     }
 
     public static void readInput() throws IOException {
         //reading the words
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); //preparing to receive input
-        String line = reader.readLine();
-        String[] words;
-
+        Reader reader = new InputStreamReader(System.in);
+        //Reader reader = new FileReader(filename); //for a file
+        //Reader reader = new InputStreamReader(socket.getInputStream()); //for an application
+        //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//        String[] words;
 
         //storing the words
-        HashMap <String,Integer> wordBank;
-        wordBank = new HashMap <String, Integer>();
+//        HashMap <String,Integer> wordBank;
+//        wordBank = new HashMap <String, Integer>();
 
-        while (line != null) {
-            words = line.split("[.,!?:;'] | \\s+"); //separating each line into individual words using whitespace and punctuation as a delimiter
-            for(String word:words) {
-                if(wordBank.containsKey(word)){
-                    wordBank.put(word,wordBank.get(word)+1);
-                }
-                else {wordBank.put(word,1);}
+        try {
+            BufferedReader input = new BufferedReader(reader);
+            while(input.ready()) {
+                String line = input.readLine();
+
+
+                System.out.println(line);
+
+//            String line = reader.readLine();
+//            while (line != null) {
+//                words = line.toLowerCase().split("[.,!?:;'] | \\s+"); //separating each line into individual words using whitespace and some punctuation as a delimiter
+//                for (String word : words) {
+//                    if (wordBank.containsKey(word)) {
+//                        wordBank.put(word, wordBank.get(word) + 1);
+//                    }
+//                    else {
+//                        wordBank.put(word, 1);
+//                    }
+//                }
+//                line = reader.readLine();
             }
-            line = reader.readLine();
         }
-
+        catch (IOException e){
+        }
     }
 }
