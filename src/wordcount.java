@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class wordcount {
 
-    public void interator(int minlength) throws IOException {
+    public void iterator(int minlength) throws IOException {
 
 //      reading the words
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -15,18 +15,18 @@ public class wordcount {
 //      Storing the words
         HashMap<String,Integer> wordBank = new HashMap<>();
 
-
-            while (line != null) {
-                for (String words : splitter) {
-                    if (wordBank.containsKey(words)) { //&& words.length() > minlength
-                        wordBank.put(words, wordBank.get(words) + 1);
-                    }
-                    else {
-                        wordBank.put(words, 1);
-                    }
-                    System.out.println(wordBank);
+        while (line != null) {
+            for (String words : splitter) {
+                if (wordBank.containsKey(words)) { //&& words.length() > minlength
+                    wordBank.put(words, wordBank.get(words) + 1);
                 }
-                line = reader.readLine();
+                else {
+                    wordBank.put(words, 1);
+                }
+                System.out.println(wordBank);
             }
+
+            line = reader.readLine();
+        }
     }
 }

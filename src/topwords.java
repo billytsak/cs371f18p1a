@@ -8,9 +8,10 @@ public class topwords {
         //calls to the three methods below, passing the args parameters from the user
         int howmany = Integer.parseInt(args[0]);
         int minlength = Integer.parseInt(args[1]);
+//        wordcount.iterator(minlength);
         int lastnwords = Integer.parseInt(args[2]);
     }
         //Reader reader = new FileReader(filename); //for a file
         //Reader reader = new InputStreamReader(socket.getInputStream()); //for an application
 
-    }
+}
