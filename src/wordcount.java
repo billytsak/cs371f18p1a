@@ -18,7 +18,7 @@ public class wordcount {
 
         while (line != null) {
             for (String words : splitter) {
-                if (wordBank.containsKey(words)) { //&& words.length() > minlength
+                if (wordBank.containsKey(words) && words.length() > minlength) {
                     wordBank.put(words, wordBank.get(words) + 1); //increase occurrence value of the word if its present in wordbank
                 }
                 else {
